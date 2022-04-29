@@ -1,0 +1,25 @@
+$primary: hsl(238, 29%, 16%);
+$secondary: hsl(14, 88%, 65%);
+$heading: hsl(237, 12%, 33%);
+$text:hsl(240, 6%, 50%);
+$accent:hsl(240, 5%, 91%);
+$desktop:800px;
+
+// mixins
+@mixin desktop {
+    @media (min-width:$desktop){
+        @content;
+    }
+}
+
+
+// grid
+@include desktop{
+    .grid{
+        display: grid;
+
+    }
+    .grid--cls2{
+        grid-template-columns: 1fr 1fr;
+    }
+}
