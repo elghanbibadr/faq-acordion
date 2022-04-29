@@ -357,8 +357,11 @@ body{
     height: 200vh;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 1.2rem;
+    padding-top: 3rem;
 }
 p{
   color: $text;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-block: 6px;
 }
