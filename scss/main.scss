@@ -8,14 +8,33 @@
     background-repeat: no-repeat;
     margin-top: 7rem;
      background-position: 50% 1%;
-    // height:120vh;
     margin-inline: 2rem;   
     border-radius: 25px;
-
+  @include desktop{
+      background-image: url(/images/bg-pattern-desktop.svg);
+      background-position: -30%  -30%;
+      background-size: 500px;
+      margin-inline: 7rem;
+      margin-top: 1rem;
+  }
     &__questions{
      padding: 1rem 1.5rem;
      position:relative;
      top: -5rem;
+     @include desktop{
+         top: 0;
+     }
+    }
+    &__box{
+        display: none;
+        @include desktop{
+            display: block;
+            position: absolute;
+            left: -14.7rem;
+            top: 23rem;
+            transform: scale(0.8);
+            z-index: 3333;
+        }
     }
  
     &__title{
@@ -36,6 +55,8 @@
   &__arrow{
       margin-top: 0.9rem;
       cursor: pointer;
+    
+    height: 7px;
   }
  &__ques-active{
   color: $heading;
@@ -44,6 +65,18 @@
   &__answers{
     opacity: 0;
     max-height: 0;
+    transition: max-height 0.5s ease;
+    margin-block: 10px;
+  }
+  .mobile{
+      @include desktop{
+          display: none;
+      }
+  }
+  &__answers--active{
+      opacity: 1;
+      max-height: fit-content;
+
   }
  
 
@@ -58,8 +91,12 @@
   
 }
 .hidden{
-    display: block;
+    display: none;
     @include desktop{
-       display: none;
+       display: block;
+       position: relative;
+       left: -14rem;
+       top: 14rem;
+       transform: scale(0.8);
     }
 }
